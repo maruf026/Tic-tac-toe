@@ -1,7 +1,39 @@
-export default function Tail(){
+ import {useState} from 'react';
+ 
+ function Square(){
+  const [value, setValue] = useState(null); 
+  function clickhandle(){
+    setValue('X')
+  }
     return (
-        <div>
-          <h1 className='font-bold'>Hello tailwind</h1>
-        </div>
+      <button onClick={clickhandle} className='h-12 w-12 border border-gray-400 m-1 text-lg '>{value}</button>
+    );
+}
+
+
+export default function Board(){
+    return (
+        <>
+         <div className='flex'>
+         <Square />
+         <Square />
+         <Square />
+         
+         </div>
+
+         <div className='flex'>
+         <Square />
+         <Square />
+         <Square />
+         
+         </div>
+
+         <div className='flex'>
+         <Square />
+         <Square />
+         <Square />
+         
+         </div>
+        </>
     );
 }
